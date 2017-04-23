@@ -1,0 +1,256 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+
+<!--------------------------------------------------------------------------------------
+    
+    CLASS       : English for Computer Science
+    INSTRUCTOR  : Richard Bradley
+    HOMEWORK    : Webpage for tourism company
+    DUE         : 10 Jan 2017
+    NAME        : TEAM 1, GROUP CD
+                  DUONG THANH HUNG, HUYNH VINH LONG, LE HONG THANG, VU VIET THANG
+
+---------------------------------------------------------------------------------------->
+
+<html>
+
+<head>
+    <title>Message</title>
+    <base target="_parent">
+</head>
+
+<body background="pic/grid3.png" link="#7D7D7D" vlink="#7D7D7D" alink="#fff" text="#786664">
+        
+    <!--Message-->
+    <table cellpadding="10" width="100%"><tr>
+        <!--left space-->
+        <td width="20%"></td>
+        
+        <!--form in center-->
+        <td width="60%" bgcolor="ffffff">
+            <form name="message" method="post">
+                
+                <br><a name="top"></a>
+                <h1 align="center"><font color="black">LEAVE US A MESSAGE!</font></h1>
+                <p align="center"><font color="red"><b>* Required</b></font></p>
+                
+                <!--name-->
+                &nbsp; &nbsp; My name is 
+                &nbsp; &nbsp;
+                <input type="text">
+                <br><br>
+                
+                <!--Day of birth-->
+                &nbsp; &nbsp; I am
+                <input name="year_old" type="number" min="6" max="100"> years old
+                <br><br>
+                
+                <!--Address-->
+               &nbsp; &nbsp;  I live in<br>
+                <table style="margin-left:77"> <!--=============================CSS===================================-->
+                    <tr>
+                        <td>City</td>
+                        <td><input name="city" type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>Province/State</td>
+                        <td><input name="province/state" type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>Country</td>
+                        <td><input name="country" type="text"></td>
+                    </tr>
+                </table>
+                <br>
+                
+                <!--Phone-->
+                &nbsp; &nbsp; My phone number is 
+                <input name="phone" type="text">
+                <br><br>
+                
+                <!--Email-->
+                &nbsp; &nbsp; My email is <font color="red">*</font>
+                <input name="email" type="text">
+                <br>
+                
+                <!------Privacy note------->
+                <br><br>
+                <table align="center" width="70%" bgcolor="#28a9e0" cellpadding="20"><tr><td><i><p align="justify"><font color="#ffffff">
+                    Savitar Travel respect your privacy. We guarantee that your information will be kept secured and will not be used without your permission.
+                </font></p></i></td></tr></table>
+                <br><br>
+                
+                <!--Purpose-->
+                &nbsp; &nbsp; I am writing this message to <font color="red">*</font> <br>
+                &nbsp; &nbsp; &nbsp; &nbsp;
+                <input type="radio" name="purpose" value="question" onclick="disableTextArea()" checked> Ask a question <br>
+                &nbsp; &nbsp; &nbsp; &nbsp;
+                <input type="radio" name="purpose" value="feedback" onclick="disableTextArea()"> Send a feedback <br>
+                &nbsp; &nbsp; &nbsp; &nbsp;
+                <input type="radio" name="purpose" value="other" onclick=enableTextArea()> Other purpose(s) <br>
+                <p name="other"></p>
+                <br>
+                   
+                <!--Message-->
+                &nbsp; &nbsp; My message <font color="red">*</font> <br>
+                <p align="center"><textarea name="text" rows="10" cols="50"></textarea></p>
+                <br><br>
+                
+                <!--Survey-->
+                &nbsp; &nbsp; Have you ever travel with us? <font color="red">*</font> <br>
+                &nbsp; &nbsp; <input name="travel" type="radio" value="good" checked> Yes. It was great! <br>
+                &nbsp; &nbsp; <input name="travel" type="radio" value="ok"> Yes. It was OK. <br>
+                &nbsp; &nbsp; <input name="travel" type="radio" value="bad"> Yes. It was not so good. <br>
+                &nbsp; &nbsp; <input name="travel" type="radio" value="considering"> No, but I'm considering. <br>
+                &nbsp; &nbsp; <input name="travel" type="radio" value="not"> No and I won't use your service<br><br>
+                
+                <!--Survey-->
+                &nbsp; &nbsp; Do you find the website helpful? <font color="red">*</font> <br>
+                &nbsp; &nbsp; <input name="web" type="radio" value="good" checked> Yes, absolutely <br>
+                &nbsp; &nbsp; <input name="web" type="radio" value="ok"> It is OK <br>
+                &nbsp; &nbsp; <input name="web" type="radio" value="bad"> No, it's not good enough
+                <br> <br>
+                
+                <!--buttons-->
+                <p align="center">
+                    <img src="pic/reset.png" alt="reset" height="30" onclick="document.getElementsByName('message')[0].reset()">
+                    &nbsp;&nbsp;&nbsp;
+                    <img src="pic/submit.png" alt="submit" height="30" onclick="Submit()">
+                </p>
+
+            </form>
+        </td>
+        <!--right space-->
+        <td width="20%"></td>
+    </tr></table>
+    <br><br>
+    
+    <!--Go to top-->
+    <img src="pic/top.png" alt="TOP" align="right" onclick="scrollToElement('top')" height="30" onmouseover="this.height='35'" onmouseout="this.height='30'">
+    <br><br><br><br>
+    
+    <!--Footer: contact / adwards / partners-->
+    <table width="100%" cellpadding="15" background="pic/grid4.jpg">
+        <tr>
+            <!--contact-->
+            <td width="35%">
+                <!--info-->
+                <h2><font color="white">&nbsp;&nbsp;Contact us</font></h2>
+                <address>
+                    <font color="#7D7D7D">
+                        <ul>
+                            <li>Address: 1234 ABC Street, XYZ City, UVW</li>
+                            <li>Phone:   0123456789 </li>
+                            <li>Fax:     9876543210 </li>
+                            <li>Email:   <a href="mailto:contact@savitartravel.com">contact@savitartravel.com</a></li>
+                        </ul>
+                    </font>
+                </address>
+                <!--icons of social networks-->
+                <div align="center">
+                    <a href="https://www.facebook.com/"><img src="pic/facebook.png" alt="facebook" width="30" height="30"></a>
+                    <a href="https://twitter.com/?lang=en"><img src="pic/twitter.png" alt="tweeter" width="30" height="30"></a>
+                    <a href="https://plus.google.com/"><img src="pic/google-plus.png" alt="google+" width="30" height="30"></a>
+                    <a href="https://www.instagram.com/"><img src="pic/instagram.png" alt="instagram" width="30" height="30"></a>
+                    <a href="https://www.pinterest.com/"><img src="pic/pinterest.png" alt="pinterest" width="30" height="30"></a>
+                </div>
+            </td>
+            <!--Navigation / partners -->
+            <td>
+                <!--navigation-->
+                <a href="../index.html">HOME</a> &nbsp;&nbsp;|&nbsp;&nbsp;
+                <a href="frame_destinations.html">DESTINATIONS</a> &nbsp;&nbsp;|&nbsp;&nbsp;
+                <a href="frame_booking.html">BOOKING</a> &nbsp;&nbsp;|&nbsp;&nbsp;
+                <a href="frame_travel_tips.html">TRAVEL TIPS</a> &nbsp;&nbsp;|&nbsp;&nbsp;
+                <a href="frame_about_us.html">ABOUT US</a> &nbsp;&nbsp;|&nbsp;&nbsp;
+                <a href="frame_faq.html">FAQs</a>
+                <br>
+                <a href="frame_recruitment.html">Recruitment</a> &nbsp;&nbsp;|&nbsp;&nbsp;
+                <a href="frame_reference.html">Reference</a>
+                </b>
+                <br>
+                <!--partners-->
+                <p><font color="#fff">In partnership with</font></p>
+                <a href="https://www.vietnamairlines.com/vn/vi/"><img src="pic/partner1.jpg" alt="partner1" width="150" height="50"></a>
+                <a href="http://www.novotel.com/gb/asia/index.shtml"><img src="pic/partner2.png" alt="partner2" width="50" height="50"></a>
+                <a href="https://www.travelinsured.com/"><img src="pic/partner3.jpg" alt="partner3" width="150" height="50"></a>
+                <a href="http://www.sheratonseattle.com/"><img src="pic/partner4.gif" alt="partner4" width="125" height="50"></a>
+            </td>
+        </tr>
+    </table>
+    
+    <!-------------------------------Java Script---------------------------------------->
+    <script language="JavaScript">
+        
+        //--Smoth scrolling--
+        var timeout = 0;
+        function scrollToElement(name) {
+            var x = document.getElementsByName(name)[0].offsetTop;
+            var diff = (x - self.pageYOffset) / 16;
+            if ( Math.abs(diff) > 1 ) {
+                window.scrollTo(0, (diff + self.pageYOffset));
+                clearTimeout(timeout);
+                timeout = setTimeout(scrollToElement, 8, name);
+            } else {
+                window.scrollTo(0, x);
+            }       
+        }
+        
+        //--------email checking function  0=missing 1=invalid 2=ok-----------
+        function emailCheck(x) {
+            if (x.length == 0) return 0;
+            var t = x.indexOf("@");
+            if (t<1) return 1;
+            if (x.lastIndexOf(".")<t) return 1;
+            if (x.indexOf(" ")>0) return 1;
+            return 2;
+        }
+        
+        //--------------Submit----------------
+        function Submit () {
+            var missing = "Please fill in following field(s): ";
+            var message = "";
+            var x;
+            
+            //email
+            x = document.getElementsByName("email")[0].value;
+            switch (emailCheck(x)) {
+                    case 0: missing = missing + "email "; break;
+                    case 1: message = message + "Invalid email input\n"; break;
+                }
+            
+            //message
+            x = document.getElementsByName("text")[0].value;
+            if (x.length==0) missing = missing + "message";
+         
+            //other purpose
+            if (document.getElementsByName("other")[0].innerHTML.length>0) {
+                x = document.getElementsByName("purpose_other")[0].value;
+                if (x.length==0) missing = missing + " other purpose(s) "
+            }
+                
+            
+            //alert
+            if (missing != "Please fill in following field(s): ") message = message + missing;
+            if (message.length>0) alert (message);
+            else {
+                document.getElementsByName('message')[0].submit();
+                alert("Thank you for your message!\nWe will reply to you via email as soon as posible");
+                window.location = 'home.html';
+            }
+            return false;
+        }
+        
+        //----------------other purpose----------------------
+        function enableTextArea() {
+            document.getElementsByName("other")[0].innerHTML = "<i>&nbsp; &nbsp; Please specified <font color='red'>*</font></i> <br> <p align='center'><textarea cols='50' rows='3' name='purpose_other'></textarea></p>";
+        }
+        function disableTextArea() {
+            document.getElementsByName("other")[0].innerHTML = "";
+            document.get
+        }
+        
+    </script>
+    
+</body>
+    
+</html>

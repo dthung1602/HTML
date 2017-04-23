@@ -1,0 +1,449 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+
+<!--------------------------------------------------------------------------------------
+    
+    CLASS       : English for Computer Science
+    INSTRUCTOR  : Richard Bradley
+    HOMEWORK    : Webpage for tourism company
+    DUE         : 10 Jan 2017
+    NAME        : TEAM 1, GROUP CD
+                  DUONG THANH HUNG, HUYNH VINH LONG, LE HONG THANG, VU VIET THANG
+
+---------------------------------------------------------------------------------------->
+
+<html>
+
+<head>
+    <title>Booking</title>
+    <base target="_parent">
+</head>
+
+<body background="pic/grid3.png" link="#7D7D7D" vlink="#7D7D7D" alink="#fff" text="#786664">
+    
+    <!--Cover picture-->
+    <img src="pic/booking.jpg" alt="cover picture" width="100%">
+    <br><br>
+    
+    <!--Booking form-->
+    <table cellpadding="30" width="100%"><tr>
+        <!--left space-->
+        <td width="20%"></td>
+        <!--form in center-->
+        <td width="60%" bgcolor="ffffff">
+            <form name="booking" action="mailto:r.bradley@vgu.edu.vn" method=“get” enctype=“text/plain”>
+                
+                <h1><a name="top"><font color="black">FIND MY JOURNEY</font></a></h1>
+                
+                1. My journey<br>
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                <select name="tour" onchange="totalPrice()"> 
+                    <option value="1.1">Nha Trang Excursion</option>
+                    <option value="1.2">Nha Trang Package</option>
+                    <option value="1.3">Nha Trang Luxury Tour</option>
+                    <option value="0.9">Sa Pa Excursion</option>
+                    <option value="1.05">Sa Pa Package</option>
+                    <option value="1.15">Sa Pa Luxury Tour</option>
+                    <option value="1.25">Ha Long Excursion</option>
+                    <option value="1.4">Ha Long Package</option>
+                    <option value="1.6">Ha Long Luxury Tour</option>
+                </select> 
+                <br><br>
+                
+                2. My departing day<br>
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                <select name="date">
+                    <option value="1/2/2017">1/2/2017</option>
+                    <option value="1/3/2017">1/3/2017</option>
+                    <option value="1/4/2017">1/4/2017</option>
+                    <option value="1/5/2017">1/5/2017</option>
+                </select> 
+                <br><br>
+                
+                3. There will be <br>
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+                <input name="adults" type="number" value="1" min="1" size="3" onchange="totalPrice()">
+                adult(s) <br> 
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+                <input name="children" type="number" value="0" min="0" onchange="totalPrice()">
+                child(ren) (age 5-12) <br>
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+                <input name="babies" type="number" value="0" min="0">
+                baby(es) (age &lt; 5)
+                <br><br>
+                
+                4. I need <br>
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <input name="single" type="number" min="0" value="1" onchange="totalPrice()"> single room(s)<br>
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <input name="double" type="number" min="0" value="0" onchange="totalPrice()"> double room(s) <br>
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <input name="family" type="number" min="0" value="0" onchange="totalPrice()"> family room(s) (4 people) <br>
+                &nbsp; &nbsp; &nbsp; &nbsp;<i>Note: children age 5-12 need their own beds while babies don't</i>
+                <br><br>
+                
+                 <!--Price-->
+                <br>
+                <table align="center" width="70%" bgcolor="#28a9e0" cellpadding="20"><tr><td><p align="justify"><font size="+2" color="#ffffff" name="price">
+                    Total price: &nbsp; &nbsp; &nbsp; $1045
+                </font></p></td></tr></table>
+                <br>
+                
+                5. How to contact me<br>
+                <!--name-->
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; I am
+                <select name="salutation">
+                    <option value="mr">Mr.</option>
+                    <option value="mrs">Mrs.</option>
+                    <option value="ms">Ms.</option>
+                    <option value="dr">Dr.</option>
+                    <option value="prof">Prof.</option>
+                </select>
+                <input name="name" type="text"> <br>
+                <!--nationality-->
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; My nationality is &nbsp;
+                <input name="nationality" type="text"> <br>
+                <!--nationality-->
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; My ID is &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                <input name="id" type="text"> <br>
+                <!--Day of birth-->
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+                I was born on
+                <select name="month">
+                    <option value="1">Jan</option>
+                    <option value="2">Feb</option>
+                    <option value="3">Mar</option>
+                    <option value="4">Apr</option>
+                    <option value="5">May</option>
+                    <option value="6">Jun</option>
+                    <option value="7">Jul</option>
+                    <option value="8">Aug</option>
+                    <option value="9">Sep</option>
+                    <option value="10">Oct</option>
+                    <option value="11">Nov</option>
+                    <option value="12">Dec</option>
+                </select>
+                <input name="day" type="number" value="1" min="1" max="31">
+                <input name="year" type="number" value="1990" min="1900" max="2016"><br>
+                <!--Address-->
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+                My address is<br>
+                <table> 
+                    <tr>
+                        <td rowspan="5" width="77"></td>
+                        <td>House number</td>
+                        <td><input name="house" type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>Street</td>
+                        <td><input name="street" type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>City</td>
+                        <td><input name="city" type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>Province/State</td>
+                        <td><input name="province/state" type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>Country</td>
+                        <td><input name="country" type="text"></td>
+                    </tr>
+                </table>
+                <!--Phone-->
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+                My phone number is 
+                <input name="phone" type="text"> <br>
+                <!--Email-->
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+                My email is 
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+                <input name="email" type="text"> <br>
+                
+                <!------Privacy note------->
+                <br><br>
+                <table align="center" width="70%" bgcolor="#28a9e0" cellpadding="20"><tr><td><i><p align="justify"><font color="#ffffff">
+                    Savitar Travel respects your privacy. We guarantee that your information will be kept secured and will not be used without your permission.
+                </font></p></i></td></tr></table>
+                <br><br>
+                
+                6. I would like to pay by 
+                <select name="pay">
+                    <option value="Visa">Visa</option>
+                    <option value="Master">Mastercard</option>
+                </select> <br>
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+                Card owner's information: <br>
+                <table>
+                    <tr>
+                        <td rowspan="5" width="66"></td>
+                        <td>First name</td>
+                        <td><input name="first_name" type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>Last name</td>
+                        <td><input name="last_name" type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>Card number</td>
+                        <td><input name="card_num" type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>Expiration</td>
+                        <td>
+                            <select name="exp_month">
+                                <option value="1">Jan</option>
+                                <option value="2">Feb</option>
+                                <option value="3">Mar</option>
+                                <option value="4">Apr</option>
+                                <option value="5">May</option>
+                                <option value="6">Jun</option>
+                                <option value="7">Jul</option>
+                                <option value="8">Aug</option>
+                                <option value="9">Sep</option>
+                                <option value="10">Oct</option>
+                                <option value="11">Nov</option>
+                                <option value="12">Dec</option>
+                            </select>
+                            <input name="exp_day" type="number" value="1" min="1" max="31">
+                            <input name="exp_year" type="number" value="2017" min="2016">
+                        </td>
+                    </tr>
+                </table>
+                <br>
+           
+                7. My additional note (optional) <br><br>
+                <textarea name="note" rows="10" cols="40"></textarea> 
+                <br><br>
+                
+                <!--Term and condition-->
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+                <input name="agree" type="checkbox"> 
+                I have read and agree to the <a href="frame_terms_and_conditions.html" target="_blank">Terms and conditions</a> <br>
+                <br><br>
+                
+                <!--Buttons-->
+                <p align="center">
+                    <img src="pic/reset.png" alt="reset" height="30" onclick="Reset()" onmouseover="this.height='35'" onmouseout="this.height='30'">
+                    &nbsp;&nbsp;&nbsp;
+                    <img src="pic/submit.png" alt="submit" height="30" onclick="Submit()" onmouseover="this.height='35'" onmouseout="this.height='30'">
+                </p>
+            </form>
+        </td>
+        <!--right space-->
+        <td width="20%"></td>
+    </tr></table>
+    <br><br>
+    
+    <!--Go to top-->
+    <img src="pic/top.png" alt="TOP" align="right" onclick="scrollToElement('top')" height="30" onmouseover="this.height='35'" onmouseout="this.height='30'">
+    <a href="frame_message.html"><img src="pic/message.png" alt="message" align="right" height="30" onmouseover="this.height='35'" onmouseout="this.height='30'"></a>
+    <br><br><br><br>
+    
+    
+    <!--Footer: contact / adwards / partners-->
+    <table width="100%" cellpadding="15" background="pic/grid4.jpg">
+        <tr>
+            <!--contact-->
+            <td width="35%">
+                <!--info-->
+                <h2><font color="white">&nbsp;&nbsp;Contact us</font></h2>
+                <address>
+                    <font color="#7D7D7D">
+                        <ul>
+                            <li>Address: 1234 ABC Street, XYZ City, UVW</li>
+                            <li>Phone:   0123456789 </li>
+                            <li>Fax:     9876543210 </li>
+                            <li>Email:   <a href="mailto:contact@savitartravel.com">contact@savitartravel.com</a></li>
+                        </ul>
+                    </font>
+                </address>
+                <!--icons of social networks-->
+                <div align="center">
+                    <a href="https://www.facebook.com/"><img src="pic/facebook.png" alt="facebook" width="30" height="30"></a>
+                    <a href="https://twitter.com/?lang=en"><img src="pic/twitter.png" alt="tweeter" width="30" height="30"></a>
+                    <a href="https://plus.google.com/"><img src="pic/google-plus.png" alt="google+" width="30" height="30"></a>
+                    <a href="https://www.instagram.com/"><img src="pic/instagram.png" alt="instagram" width="30" height="30"></a>
+                    <a href="https://www.pinterest.com/"><img src="pic/pinterest.png" alt="pinterest" width="30" height="30"></a>
+                </div>
+            </td>
+            <!--Navigation / partners -->
+            <td>
+                <!--navigation-->
+                <a href="../index.html">HOME</a> &nbsp;&nbsp;|&nbsp;&nbsp;
+                <a href="frame_destinations.html">DESTINATIONS</a> &nbsp;&nbsp;|&nbsp;&nbsp;
+                <a href="frame_booking.html">BOOKING</a> &nbsp;&nbsp;|&nbsp;&nbsp;
+                <a href="frame_travel_tips.html">TRAVEL TIPS</a> &nbsp;&nbsp;|&nbsp;&nbsp;
+                <a href="frame_about_us.html">ABOUT US</a> &nbsp;&nbsp;|&nbsp;&nbsp;
+                <a href="frame_faq.html">FAQs</a>
+                <br>
+                <a href="frame_recruitment.html">Recruitment</a> &nbsp;&nbsp;|&nbsp;&nbsp;
+                <a href="frame_reference.html">Reference</a>
+                </b>
+                <br>
+                <!--partners-->
+                <p><font color="#fff">In partnership with</font></p>
+                <a href="https://www.vietnamairlines.com/vn/vi/"><img src="pic/partner1.jpg" alt="partner1" width="150" height="50"></a>
+                <a href="http://www.novotel.com/gb/asia/index.shtml"><img src="pic/partner2.png" alt="partner2" width="50" height="50"></a>
+                <a href="https://www.travelinsured.com/"><img src="pic/partner3.jpg" alt="partner3" width="150" height="50"></a>
+                <a href="http://www.sheratonseattle.com/"><img src="pic/partner4.gif" alt="partner4" width="125" height="50"></a>
+            </td>
+        </tr>
+    </table>
+    
+       
+    <!------------------------------------Java Script------------------------------------>
+    <script language="JavaScript">
+        //--------------Smoth scrolling----------------------
+        var timeout = 0;
+        function scrollToElement(name) {
+            var x = document.getElementsByName(name)[0].offsetTop;
+            var diff = (x - self.pageYOffset) / 16;
+            if ( Math.abs(diff) > 1 ) {
+                window.scrollTo(0, (diff + self.pageYOffset));
+                clearTimeout(timeout);
+                timeout = setTimeout(scrollToElement, 10, name);
+            } else {
+                window.scrollTo(0, x);
+            }       
+        }
+        
+        //---------------checking functions  0=missing 1=invalid 2=ok-------------------
+        function textCheck(x) {
+            if (x.length == 0) return 0;
+            var i, l=x.length;
+            for (i=0; i<l; i++) {
+                var t = x.charCodeAt(i); 
+                if ( (191>=t && t>=123) || (96>=t && t>=91) || (64>=t && t!=32) ) return 1;
+            }
+            return 2;
+        }
+        
+        function EmailCheck(x) {
+            if (x.length == 0) return 0;
+            var t = x.indexOf("@");
+            if (t<1) return 1;
+            if (x.lastIndexOf(".")<t) return 1;
+            if (x.indexOf(" ")>0) return 1;
+            return 2;
+        }
+        
+        function emailCheck(x) {
+            if (x.length == 0) return 0;
+            var regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            if (regex.test(x)) return 2;
+            return 1;
+        }
+        
+        function dateCheck(i,x,y) {
+            var leap = false;
+            if ( y%400==0 || (y%4==0 && y%100!=0) ) leap = true;
+            switch (x) {
+                case 4:
+                case 6:
+                case 9:
+                case 11: if (i==31)  return 1; break;
+                case 2: if ( ((leap==true) && (i>29)) || ((leap==false) && (i>28)) ) return 1; break;
+            }
+            return 2;
+        }
+        
+        //---------------------Reset-------------------------
+        function Reset () {
+            var x = document.getElementsByName("price")[0];
+            x.innerHTML = "Total price: &nbsp; &nbsp; &nbsp; $1045";
+            document.getElementsByName('booking')[0].reset();
+        }
+        
+        //-------------------------Submit--------------------------------------
+        function Submit () {
+            
+            var missing = "Please fill in following field(s): \n";
+            var invalid = "Invalid input in following field(s): \n";
+            var message = "";
+            var x,y,i;
+            var a = ["name", "nationality", "city", "province/state", "country", "first_name", "last_name"];
+            var b = ["card_num", "phone", "id"];
+            
+            //room
+            x = Number(document.getElementsByName("adults")[0].value)
+              + Number(document.getElementsByName("children")[0].value);
+            y = Number(document.getElementsByName("single")[0].value)
+              + Number(document.getElementsByName("double")[0].value) * 2
+              + Number(document.getElementsByName("family")[0].value) * 4;
+            if ( x > y ) message = "There are not enough bed for everyone\n\n";
+            
+            //check birthday validity
+            x = Number(document.getElementsByName("month")[0].value);
+            i = Number(document.getElementsByName("day")[0].value);
+            y = Number(document.getElementsByName("year")[0].value);
+            if (dateCheck(i,x,y)==1) message = message + "Invalid birthday input\n\n";
+            
+            //check expiration day validity
+            x = Number(document.getElementsByName("exp_month")[0].value);
+            i = Number(document.getElementsByName("exp_day")[0].value);
+            y = Number(document.getElementsByName("exp_year")[0].value);
+            if (dateCheck(i,x,y)==1) message = message + "Invalid card expiration day input\n\n";
+            
+            //check elements in a[] array
+            y = a.length;
+            for (i=0; i<y; i++) {
+                x = document.getElementsByName(a[i])[0].value;
+                switch (textCheck(x)) {
+                    case 0: missing = missing + "- " + a[i] + "\n"; break;
+                    case 1: invalid = invalid + "- " + a[i] + "\n"; break;
+                }
+            }
+            
+            //check elements in b[] array
+            y = b.length;
+            for (i=0; i<y; i++) {
+                x = Number(document.getElementsByName(b[i])[0].value);
+                if (x == 0) missing = missing + "- " + b[i] + "\n";
+                if (isNaN(x)) invalid = invalid + "- " + b[i] + "\n";
+            }
+            
+            //street
+            x = document.getElementsByName("street")[0].value;
+            if (x.length == 0) missing = missing + "- street\n";
+            
+            //house 
+            x = document.getElementsByName("house")[0].value;
+            if (x.length == 0) missing = missing + "- house number\n";
+            
+            //email
+            x = document.getElementsByName("email")[0].value;
+            switch (emailCheck(x)) {
+                    case 0: missing = missing + "- email\n"; break;
+                    case 1: invalid = invalid + "- email\n"; break;
+                }
+            
+            //term and condition
+            x = document.getElementsByName("agree")[0].checked;
+            if (x==false) message = message + "Please read and agree with our terms and conditons\n\n";
+            
+            //alert
+            if (invalid != "Invalid input in following field(s): \n") message = message + invalid + "\n";
+            if (missing != "Please fill in following field(s): \n") message = message + missing;
+            if (message.length>0) alert(message);
+            else {
+                document.getElementsByName('booking')[0].submit();
+                window.location = "thankyou.html";
+            }
+            return 0;
+        }
+        
+        //----------------Calculate money------------------------
+        function totalPrice() {
+            var x = document.getElementsByName("price")[0];
+            var tour = Number(document.getElementsByName("tour")[0].value);
+            var adults = Number(document.getElementsByName("adults")[0].value)
+            var children = Number(document.getElementsByName("children")[0].value);
+            var single = Number(document.getElementsByName("single")[0].value);
+            var double = Number(document.getElementsByName("double")[0].value);
+            var family = Number(document.getElementsByName("family")[0].value);
+            x.innerHTML = "Total price: &nbsp; &nbsp; &nbsp; $" + Math.round(tour * (adults*750 + children*400 + single*200 + double*300 + family*400));
+        }
+        
+    </script>
+    
+</body>
+    
+</html>
